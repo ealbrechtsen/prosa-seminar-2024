@@ -5,11 +5,15 @@ namespace _1_guess_a_number_iterative
     {
         static void Main(string[] args)
         {
-            // Random number between 0 and 100
-            Random random = new();
-            int numberToGuess = random.Next(1, 101);
+            Console.WriteLine("Dette er spillet hvor du skal gætte et tal! Indtast det maksimale tal du vil kunne gætte!");
+            int inputMaximum = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Der er genereret et random tal mellem 1 og 100, gæt det!");
+            Random random = new();
+        
+            int numberToGuess = random.Next(1, inputMaximum);
+
+            int attempts = 0;
+
             int userGuess = 0;
 
             while (userGuess != numberToGuess)
@@ -19,6 +23,8 @@ namespace _1_guess_a_number_iterative
 
                 userGuess = Convert.ToInt32(input);
                 Console.Clear();
+
+                attempts++;
 
                 if (userGuess >= numberToGuess)
                 {
@@ -32,7 +38,7 @@ namespace _1_guess_a_number_iterative
             }
             Console.Clear();
             Console.WriteLine("Tillykke du gættede rigtigt!");
-            Console.WriteLine("Det rigtige svar var " + numberToGuess);
+            Console.WriteLine($"Det rigtige svar var {numberToGuess} efter {attempts} forsøg");
             Console.ReadKey();
             //
         }
