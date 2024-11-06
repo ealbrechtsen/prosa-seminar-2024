@@ -8,5 +8,16 @@ namespace DiceWar
 {
     public class WarDiceCup
     {
+        private WarDice[] _diceArray;
+
+        public WarDiceCup(int numberOfDices)
+        {
+        }
+
+        // Ruller alle terninger i bægeret
+        public void RollAll()
+        {
+
+        }
     }
 }
