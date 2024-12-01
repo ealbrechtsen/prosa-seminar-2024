@@ -12,12 +12,32 @@ namespace DiceWar
 
         public WarDiceCup(int numberOfDices)
         {
+            _diceArray = new WarDice[numberOfDices];
+            for (int i = 0; i < numberOfDices; i++)
+            {
+                _diceArray[i] = new WarDice();
+            }
         }
 
-        // Ruller alle terninger i bægeret
         public void RollAll()
         {
-
+            foreach (var dice in _diceArray)
+            {
+                dice.Roll();
+            }
         }
+
+        public int Point()
+        {
+            int sum = 0;
+            foreach (var dice in _diceArray)
+            {
+                sum += dice.Point();
+            }
+            return sum;
+        }
+
+
+
     }
 }

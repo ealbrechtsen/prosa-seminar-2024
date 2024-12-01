@@ -21,7 +21,6 @@ namespace DiceWar
             Value = rng.Next(1, 7);
         }
 
-        // Returnerer værdien af Value
         public virtual int Point()
         {
             return Value;
