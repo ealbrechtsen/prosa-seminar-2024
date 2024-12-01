@@ -37,7 +37,9 @@ namespace DiceWar
             return sum;
         }
 
-
-
+        public override string ToString()
+        {
+            return string.Join(" ", _diceArray.Select(d => d.ToString()));
+        }
     }
 }
