@@ -29,12 +29,7 @@ namespace DiceWar
 
         public int Point()
         {
-            int sum = 0;
-            foreach (var dice in _diceArray)
-            {
-                sum += dice.Point();
-            }
-            return sum;
+            return _diceArray.Sum(d => d.Point());
         }
 
         public override string ToString()
