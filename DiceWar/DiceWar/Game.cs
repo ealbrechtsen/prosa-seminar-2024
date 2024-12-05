@@ -43,7 +43,7 @@ namespace DiceWar
                 Console.WriteLine($"\nRound {i}");
                 PlayRound();
             }
-            Console.WriteLine("\nGame over!\n");
+            Console.WriteLine("\nEnd results:\n");
             Console.WriteLine($"Player total points:   {_playerPoint}");
             Console.WriteLine($"Computer total points: {_computerPoint}");
         }
