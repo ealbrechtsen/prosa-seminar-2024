@@ -21,30 +21,24 @@ namespace DiceWar
             _computerCup = new WarDiceCup(numberOfDices);
             _rounds = rounds;
         }
+
         public void PlayRound()
         {
             _playerCup.RollAll();
             _computerCup.RollAll();
 
-            int playerRoundPoints = _playerCup.Point();
-            int computerRoundPoints = _computerCup.Point();
+            _playerPoint += _playerCup.Point();
+            _computerPoint += _computerCup.Point();
 
-            _playerPoint += playerRoundPoints;
-            _computerPoint += computerRoundPoints;
-
-            Console.WriteLine($"Player rolled: {_playerCup}");
-            Console.WriteLine($"Computer rolled: {_computerCup}");
-            Console.WriteLine($"Player points this round: {playerRoundPoints}");
-            Console.WriteLine($"Computer points this round: {computerRoundPoints}");
-            Console.WriteLine($"Total player points: {_playerPoint}");
-            Console.WriteLine($"Total computer points: {_computerPoint}");
-
+            Console.WriteLine($"Player rolled:   {_playerCup} with total of: {_playerCup.Point().ToString()}");
+            Console.WriteLine($"Computer rolled: {_computerCup} with total of: {_computerCup.Point().ToString()}");
+            
             _rounds--;
         }
 
-        public void StartGame(int numberOfDices, int rounds)
+        public void StartGame()
         {
-            for (int i = 1; i <= rounds; i++)
+            for (int i = 1; i <= _rounds; i++)
             {
                 Console.WriteLine($"\nRound {i}");
                 PlayRound();

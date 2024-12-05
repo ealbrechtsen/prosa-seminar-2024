@@ -14,8 +14,6 @@ namespace DiceWar
 
         private static readonly Random rng = new PcgRandom();
 
-
-        // Sætter Value til et tilfældigt tal mellem 1 og 6 
         public void Roll ()
         {
             Value = rng.Next(1, 7);
@@ -26,7 +24,6 @@ namespace DiceWar
             return Value;
         }
 
-        // Viser værdien som string
         public override string ToString()
         {
             return $"[{Value}]";
